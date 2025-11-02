@@ -6,9 +6,9 @@
 
 O **SeViraAi** é uma aplicação web que ajuda você a descobrir receitas incríveis usando os ingredientes que você tem em casa. Acabou aquela desculpa de "não tenho nada pra comer" - digite o que tem na geladeira e deixe a mágica acontecer!
 
-    <img src="./assets/img-readme1.png" alt="imagem do readme">
-    <img src="./assets/img-readme2.png" alt="imagem do readme">
-    <img src="./assets/img-readme3.png" alt="imagem do readme">
+<img src="./assets/img-readme1.png" alt="imagem do readme">
+<img src="./assets/img-readme2.png" alt="imagem do readme">
+<img src="./assets/img-readme3.png" alt="imagem do readme">
 
 
 ### ✨ Características
@@ -162,12 +162,13 @@ Sugestões e melhorias são sempre bem-vindas! Sinta-se à vontade para:
 
 - GitHub: [Danielly Pedrini](https://github.com/danielly-pedrini)
 - LinkedIn: [[Danielly Pedrini](https://www.linkedin.com/in/daniellypedrini/)]
----
-
-Desenvolvido com ❤️ e muita criatividade para facilitar a vida de quem ama cozinhar (ou improvisa na cozinha)!
 
 ---
 
 **Lembre-se**: Na cozinha, como na vida, o importante é se virar! 🍲✨
 
 *"Tá sem ideia, mas cheio de ingredientes? SeViraAi te salva!"*
+
+---
+
+Desenvolvido com ❤️ e muita criatividade para facilitar a vida de quem ama cozinhar (ou improvisa na cozinha)!
