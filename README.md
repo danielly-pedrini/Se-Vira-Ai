@@ -6,9 +6,8 @@
 
 O **SeViraAi** é uma aplicação web que ajuda você a descobrir receitas incríveis usando os ingredientes que você tem em casa. Acabou aquela desculpa de "não tenho nada pra comer" - digite o que tem na geladeira e deixe a mágica acontecer!
 
-<img src="./assets/img-readme1.png" alt="imagem do readme">
-<img src="./assets/img-readme2.png" alt="imagem do readme">
-<img src="./assets/img-readme3.png" alt="imagem do readme">
+<img src="./assets/img-readme.png" alt="imagem do readme">
+
 
 
 ### ✨ Características
