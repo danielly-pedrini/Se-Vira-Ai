@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>SeViraAi - Receitas Criativas</title>
+  </head>
+  <body
+    class="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 min-h-screen"
+  >
+    <header class="bg-white shadow-md sticky top-0 z-40">
+      <div class="container mx-auto px-4 py-5">
+        <h1
+          class="text-3xl md:text-4xl font-bold text-center text-gradient flex items-center justify-center"
+        >
+          <span class="pan-icon">
+            <span class="egg-icon"></span>
+          </span>
+          SeViraAi
+        </h1>
+        <p class="text-center text-gray-600 text-sm mt-2 font-medium">
+          Improvisou, cozinhou, arrasou! 🔥
+        </p>
+      </div>
+    </header>
+
+    <section class="container mx-auto px-4 py-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="hero-gradient rounded-2xl p-8 shadow-2xl text-white">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-relaxed">
+            Tá sem ideia, mas cheio de ingredientes? 😅
+          </h2>
+          <p class="text-lg md:text-xl leading-relaxed mb-4">
+            O <span class="font-bold">SeViraAi</span> te salva! Digita o que tem
+            na geladeira e descobre receitas que fariam até sua avó dizer:
+            <span class="font-bold text-yellow-200"
+              >"Mas como é que tu pensou nisso?"</span
+            >
+            🍲✨
+          </p>
+          <p class="text-base md:text-lg font-medium">
+            Aqui o lema é simples:
+            <span class="font-bold text-xl"
+              >improvisou, cozinhou, arrasou!</span
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-8">
+      <div class="max-w-2xl mx-auto">
+        <div
+          class="bg-white rounded-2xl shadow-xl p-8 border-2 border-green-200"
+        >
+          <div class="text-center mb-6">
+            <p class="text-xl md:text-2xl font-bold text-green-600 mb-2">
+              Achou que não dava pra cozinhar com o que sobrou?
+            </p>
+            <p class="text-lg text-emerald-600 font-semibold">
+              O SeViraAi prova que dá sim, chef! 🍳🔥
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input
+              type="text"
+              id="ingredientInput"
+              placeholder="Ex: leite condensado, coco, leite"
+              class="flex-1 px-6 py-4 bg-gray-50 text-gray-800 border-2 border-green-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent placeholder-gray-400"
+            />
+            <button
+              id="searchBtn"
+              class="px-8 py-4 hero-gradient text-white rounded-xl font-semibold shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+            >
+              Se vira! 🔍
+            </button>
+          </div>
+          <p class="text-xs text-gray-500 mt-3 text-center">
+            💡 Dica: Funciona melhor com ingredientes básicos como ovos, leite,
+            farinha, açúcar, etc.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="loadingState"
+      class="hidden flex justify-center items-center py-12"
+    >
+      <div class="loading"></div>
+    </div>
+
+    <section id="resultsSection" class="container mx-auto px-4 py-8">
+      <div
+        id="recipeGrid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      ></div>
+
+      <div id="emptyState" class="text-center py-16">
+        <p class="text-6xl mb-4">🤔</p>
+        <p class="text-xl text-gray-600">
+          Digite os ingredientes e descubra receitas incríveis!
+        </p>
+      </div>
+
+      <div id="noResults" class="hidden text-center py-16">
+        <p class="text-6xl mb-4">😢</p>
+        <p class="text-xl text-gray-600">
+          Ops! Não encontramos receitas com esses ingredientes.
+        </p>
+        <p class="text-gray-500 mt-2">
+          Tente outros ingredientes ou reduza a quantidade!
+        </p>
+      </div>
+    </section>
+
+    <div
+      id="recipeModal"
+      class="hidden fixed inset-0 z-50 overflow-y-auto modal-backdrop"
+    >
+      <div
+        class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0"
+      >
+        <div
+          class="fixed inset-0 transition-opacity bg-black bg-opacity-50"
+          onclick="closeModal()"
+        ></div>
+
+        <div
+          class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full"
+        >
+          <div class="bg-white px-6 pt-5 pb-4 sm:p-8">
+            <div class="flex justify-between items-start mb-4">
+              <h3
+                id="modalTitle"
+                class="text-2xl font-bold text-green-600"
+              ></h3>
+              <button
+                onclick="closeModal()"
+                class="text-gray-400 hover:text-gray-600 text-3xl leading-none"
+              >
+                &times;
+              </button>
+            </div>
+
+            <img
+              id="modalImage"
+              src=""
+              alt=""
+              class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg"
+            />
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="text-xl font-semibold mb-3 text-green-600">
+                  📝 Ingredientes
+                </h4>
+                <div id="modalIngredients" class="text-gray-700">
+                  <div
+                    class="flex items-center gap-2 text-sm text-gray-500 mb-2"
+                  >
+                    <span class="mini-loading"></span>
+                    <span>Traduzindo para português...</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-semibold mb-3 text-green-600">
+                  👨‍🍳 Modo de Preparo
+                </h4>
+                <div
+                  id="modalInstructions"
+                  class="text-gray-700 leading-relaxed max-h-64 overflow-y-auto"
+                >
+                  <div class="flex items-center gap-2 text-sm text-gray-500">
+                    <span class="mini-loading"></span>
+                    <span>Traduzindo para português...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-4">
+              <span
+                id="modalTime"
+                class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+              ></span>
+              <span
+                id="modalServings"
+                class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
