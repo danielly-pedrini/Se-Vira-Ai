@@ -1,10 +1,15 @@
 # 🍳 SeViraAi - Receitas Criativas
 
+<h3>Tá sem ideia, mas cheio de ingredientes? SeViraAi te salva!</h3>
+
+> **Aqui o lema é...**
+> <br>
 > **Improvisou, cozinhou, arrasou!** 🔥
 
 ## 📖 Sobre o Projeto
 
 O **SeViraAi** é uma aplicação web que ajuda você a descobrir receitas incríveis usando os ingredientes que você tem em casa. Acabou aquela desculpa de "não tenho nada pra comer" - digite o que tem na geladeira e deixe a mágica acontecer!
+
 
 <img src="./assets/img-readme.png" alt="imagem do readme">
 
@@ -165,8 +170,6 @@ Sugestões e melhorias são sempre bem-vindas! Sinta-se à vontade para:
 ---
 
 **Lembre-se**: Na cozinha, como na vida, o importante é se virar! 🍲✨
-
-*"Tá sem ideia, mas cheio de ingredientes? SeViraAi te salva!"*
 
 ---
 
